@@ -1,0 +1,296 @@
+:root{
+    --background-links:#051B2D;
+}
+    body{
+    margin:0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(-45deg, rgb(5, 7, 45), rgb(24, 5, 45) , rgb(5, 27, 45));
+    color: white;
+    transition: color 0.5s ease; /* Transition the text color */
+    position: relative;
+    z-index: 0;
+   font-family: "Roboto Mono", monospace;
+   height: 100%;
+}
+
+.links{
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    margin: 10px;
+    
+}
+.links a,label{
+    text-decoration: none;
+    color: white;
+     font-weight: bold;
+    font-size:medium;
+    transition: transform 0.5s ease, background-color 0.3s ease;
+    border: 1px solid hsl(0, 0%, 100%, 0.3);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 15px;
+    transform: scale(1);
+    user-select: none;
+}
+
+.links a:hover{
+cursor: pointer;
+background-color: hsl(0, 0%, 100%, 0.2);
+transform: scale(1.1) rotateZ(5deg) ;
+}
+
+.links label:hover{
+cursor: pointer;
+background-color: hsl(0, 0%, 100%, 0.2);
+transform: scale(1.1) rotateZ(5deg);
+}
+
+/* This creates a "hidden" layer for the Light Mode */
+body::before {
+    content: "";
+    position: fixed; /* Keeps it covering the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        -45deg,
+        rgb(180, 190, 230),
+        rgb(200, 180, 230) 45%,
+        rgb(180, 210, 230)
+    );
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.6s ease; /* This is what makes it smooth! */
+    z-index: -1; /* Puts it behind your text and cards */
+}
+
+/* When the checkbox is checked, make the light layer visible */
+body:has(#light-dark:checked)::before {
+    opacity: 1;
+}
+
+/* Update text color when checked */
+body:has(#light-dark:checked) {
+   color: rgb(95, 85, 115);
+}
+
+/* Optional: Adjust card borders/shadows for light mode if they look too faint */
+body:has(#light-dark:checked) .card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+body:has(#light-dark:checked) .links a, body:has(#light-dark:checked) .links label{
+  color: rgb(95, 85, 115);
+   border: 1px solid hsl(0, 0%, 100%, 0.4);
+}
+.page{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+
+.card{
+    border: 1px solid hsl(0, 0%, 100%, 0.3);
+    border-radius: 15px;
+    padding: 15px;
+    width: auto;
+    height: auto;
+    margin:25px;
+    background: hsl(0, 0%, 90%, 0.2);
+    box-shadow: inset 0 0 8px 1px hsl(0, 0%, 100%, 0.3);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: transform 0.5s ease ;
+    transform: scale(1.0);
+    position: relative;
+}
+
+.card h1{
+    text-align: center;
+    color: rgb(5, 7, 45);
+    font-weight: bolder;
+    
+}
+
+body:has(#light-dark:checked) .fav-serie{
+    color: rgb(160, 40, 80);
+}
+
+
+.fav-serie{
+    color: red;
+}
+
+#light-dark{
+    display: none;
+}
+
+.coming-soon{
+    border: 1px solid hsl(0, 0%, 100%, 0.3);
+    border-radius: 15px;
+    padding: 15px;
+    width: 350px;
+    height: 350px;
+    margin:25px;
+    background: hsl(0, 0%, 90%, 0.2);
+    box-shadow: inset 0 0 8px 1px hsl(0, 0%, 100%, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h2{
+    text-align: center;
+}
+
+.projects{
+   position: relative;
+}
+
+.projects h2{
+    text-align: center;
+  position: static;
+
+}
+
+.text-overlay{
+    position: absolute;
+    top: 50%;
+    left: 23%;
+
+}
+
+.footer{
+    background-color: rgb(5, 7, 45);
+    text-align: center;
+    font-size: large;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+body:has(#light-dark:checked) .footer{
+    background-color: rgb(200, 180, 230);
+}
+
+.nav{
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+}
+
+.nav.scrolled {
+    background-color: rgba(5, 27, 45, 0.85); /* A deep space blue with transparency */
+    backdrop-filter: blur(10px); /* This creates that "frosted glass" sci-fi look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    height: 90px;
+}
+
+body:has(#light-dark:checked) .nav.scrolled{
+    background-color: rgb(200, 180, 230);
+     backdrop-filter: blur(10px); /* This creates that "frosted glass" sci-fi look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    height: 90px;
+}
+
+.profile-pic{
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+.card:hover{
+    transform: rotateX(-10deg) rotateY(5deg) ;
+    
+}
+
+.front-end{
+    font-weight: lighter;
+    opacity: 0.5;
+    margin-left: 5px;
+}
+
+
+.montserrat-paragraph {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+.roboto-mono-headings {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.name{
+    writing-mode: vertical-lr;
+    text-align: center;
+    position: relative;
+    bottom: 25px;
+
+}
+
+.img{
+    display: flex;
+    flex-direction: column;
+}
+.project-group{
+display: flex;
+flex-direction: row;
+gap: 1em;
+
+}
+
+@media (max-width:750px){
+
+    body{
+        overflow-x: hidden;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name{
+    writing-mode:horizontal-tb;
+    position: relative;
+    bottom: 0;
+
+    text-align: center;
+}
+
+.nav.scrolled {
+    background-color: rgba(5, 27, 45, 0.85); /* A deep space blue with transparency */
+    backdrop-filter: blur(10px); /* This creates that "frosted glass" sci-fi look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    height: 105px;
+}
+
+.front-end{
+text-align: center;
+}
+
+.project-group{
+display: flex;
+flex-direction: column;
+gap: 1em;
+}
+}
+
+
+
