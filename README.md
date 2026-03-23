@@ -1,1 +1,5 @@
-# Flavortown-project2
+This is my first project on Hack Club Flavortown. I know HTML and CSS, even though I could get some more knowledge in CSS. 
+I want to learn JavaScript and might probably implement it a bit in this project.
+This project is being made with my knowledge and YouTube tutorials
+I used Gemini. I learnt about background-gradients and how transitioning background-images smoothly works, because you can’t transition background-images smoothly like how you transition background colors, you have to use a different method. I also learnt how positions work in CSS. I am going to add more updates.
+I’ve made some changes in the past few hours. I rarely used AI this time, and the website is more responsive to screen sizes. By the way, the image of me is generated with AI(sorry, please don’t be angry). I don’t really have projects that have used HTML, CSS, and JavaScript that I can share with you right now. So I just decided to share some scratch ones. I didn’t do these scratch projects by myself, though. Credit goes to YouTube. But all thanks goes to God(I’m christian)
