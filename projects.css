@@ -21,7 +21,7 @@
     margin: 10px;
     
 }
-.links a,label{
+.links a, label{
     text-decoration: none;
     color: white;
      font-weight: bold;
@@ -33,7 +33,19 @@
     padding: 15px;
     transform: scale(1);
     user-select: none;
+    height: fit-content;
 }
+
+.links label::before{
+    content: '☀️';
+}
+
+
+body:has(#light-dark:checked) .links label::before{
+    content: '🌙';
+
+}
+
 
 .links a:hover{
 cursor: pointer;
@@ -43,8 +55,8 @@ transform: scale(1.1) rotateZ(5deg) ;
 
 .links label:hover{
 cursor: pointer;
-background-color: hsl(0, 0%, 100%, 0.2);
-transform: scale(1.1) rotateZ(5deg);
+background-color: hsl(0, 0%, 100%, 0.2); 
+
 }
 
 /* This creates a "hidden" layer for the Light Mode */
@@ -82,7 +94,7 @@ body:has(#light-dark:checked) .card {
     background: rgba(255, 255, 255, 0.4);
 }
 
-body:has(#light-dark:checked) .links a, body:has(#light-dark:checked) .links label{
+body:has(#light-dark:checked) .links a, body:has(#light-dark:checked) label{
   color: rgb(95, 85, 115);
    border: 1px solid hsl(0, 0%, 100%, 0.4);
 }
@@ -289,6 +301,7 @@ text-align: center;
 display: flex;
 flex-direction: column;
 gap: 1em;
+align-items: center;
 }
 
 .links{
@@ -298,7 +311,7 @@ gap: 1em;
     margin: 5px;
     
 }
-.links a,label{
+.links a, label{
     text-decoration: none;
     color: white;
      font-weight: bold;
